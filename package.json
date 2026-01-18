@@ -1,0 +1,95 @@
+{
+  "name": "id-card-system",
+  "version": "1.0.0",
+  "description": "Professional ID Card Design and Management System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "npx electronmon --trace-warnings .",
+    "frontend:build": "cd Id_Card_Frontend && npm run build",
+    "build:win:portable": "npm-run-all frontend:build && electron-builder --win portable",
+    "build:win:installer": "npm-run-all frontend:build && electron-builder --win nsis",
+    "create:distribution": "powershell -ExecutionPolicy Bypass -File ./create-distribution.ps1"
+  },
+  "keywords": [
+    "id-card",
+    "electron",
+    "design",
+    "printing",
+    "template-editor"
+  ],
+  "author": "PixelVeda",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.5.0",
+    "dotenv": "^17.2.3",
+    "electron-log": "^5.4.3",
+    "joi": "^18.0.2",
+    "nanoid": "^5.1.6",
+    "nodemon": "^3.1.11",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^39.2.6",
+    "electron-builder": "^26.0.12",
+    "electron-rebuild": "^3.2.9",
+    "npm-run-all": "^4.1.5"
+  },
+  "build": {
+    "appId": "com.idcard.system",
+    "productName": "ID Card System",
+    "electronDownload": {
+      "cache": "./electron-cache"
+    },
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "Database.js",
+      "BackupManager.js",
+      "PasswordService.js",
+      "ValidationService.js",
+      "RateLimiter.js",
+      "config.js",
+      ".env.example",
+      "uninstall-customer.bat",
+      "uninstall-customer.ps1",
+      "CUSTOMER-UNINSTALL.md",
+      "Id_Card_Frontend/dist/**/*",
+      "node_modules/**/*"
+    ],
+    "asarUnpack": [
+      "node_modules/better-sqlite3/**/*"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": false,
+      "allowElevation": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "license": "CUSTOMER-UNINSTALL.md",
+      "warningsAsErrors": false,
+      "include": "build/installer.nsh"
+    },
+    "extraMetadata": {
+      "version": "1.0.0"
+    }
+  }
+}
