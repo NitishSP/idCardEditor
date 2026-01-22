@@ -13,9 +13,7 @@ This guide provides comprehensive instructions for completely uninstalling the I
 3. [What Gets Removed](#what-gets-removed)
 4. [Preserve Database Option](#preserve-database-option)
 5. [Troubleshooting](#troubleshooting)
-
 ---
-
 ## 🚀 Quick Uninstall (Automated)
 
 ### Using PowerShell Script (Recommended)

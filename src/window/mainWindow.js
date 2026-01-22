@@ -75,7 +75,7 @@ class MainWindowManager {
     });
 
     // this.mainWindow.loadURL(startUrl);
-    this.mainWindow.loadURL("http://localhost:5173");
+    // this.mainWindow.loadURL("http://localhost:5173");
   }
 
   /**

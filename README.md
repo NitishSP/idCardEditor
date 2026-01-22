@@ -4,13 +4,13 @@ Professional ID Card Design and Management System built with Electron and React.
 
 ## Features
 
-- 🎨 **Visual Template Editor** - Drag-and-drop interface for designing ID cards
-- 🖼️ **Rich Elements** - Add text, images, QR codes, and shapes to your designs
-- 💾 **Template Management** - Save and reuse templates
-- 👥 **User Management** - Manage employee data and print ID cards
-- 🔐 **Secure Authentication** - Password-protected access with bcrypt encryption
-- 📦 **Backup & Restore** - Encrypted database backups
-- 🖨️ **Print Ready** - Generate print-ready ID cards
+- **Visual Template Editor** - Drag-and-drop interface for designing ID cards
+- **Rich Elements** - Add text, images, QR codes, and shapes to your designs
+- **Template Management** - Save and reuse templates
+- **User Management** - Manage employee data and print ID cards
+- **Secure Authentication** - Password-protected access with bcrypt encryption
+- **Backup & Restore** - Encrypted database backups
+- **Print Ready** - Generate print-ready ID cards
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ The compiled app will be in the `release` directory.
 
 ## Default Credentials
 
-⚠️ **SECURITY WARNING:** Default credentials are DISABLED in production by default.
+**SECURITY WARNING:** Default credentials are DISABLED in production by default.
 
 ### For Development/Testing Only
 
@@ -96,13 +96,13 @@ Set `ENABLE_DEV_CREDENTIALS=true` in your `.env` file to enable these test accou
 
 ### Production Deployment
 
-🔒 **For production:**
+**For production:**
 1. Set `ENABLE_DEV_CREDENTIALS=false` in `.env`
 2. Create your first admin account manually using the Developer Panel
 3. Never use default credentials in production
 4. Use strong, unique passwords for all accounts
 
-⚠️ **CRITICAL:** Never commit `.env` files to version control!
+**CRITICAL:** Never commit `.env` files to version control!
 
 ### Note
 All accounts are stored in the database and work in both development and production builds.
@@ -141,14 +141,14 @@ Desk_App/
 
 ## Security Features
 
-- ✅ Context Isolation enabled
-- ✅ Node Integration disabled
-- ✅ Sandbox mode enabled
-- ✅ Content Security Policy (CSP)
-- ✅ Password hashing with bcrypt
-- ✅ Rate limiting on API calls
-- ✅ Input validation on all inputs
-- ✅ Encrypted database backups (AES-256-GCM)
+- Context Isolation enabled
+- Node Integration disabled
+- Sandbox mode enabled
+- Content Security Policy (CSP)
+- Password hashing with bcrypt
+- Rate limiting on API calls
+- Input validation on all inputs
+- Encrypted database backups (AES-256-GCM)
 
 ## Database
 
@@ -181,7 +181,7 @@ Backups are stored in:
 2. Delete `release` folder and rebuild
 3. Ensure you built the frontend first
 
-## 📦 Production Deployment
+## Production Deployment
 
 ### For Developers - Creating Distribution Package
 
@@ -226,14 +226,4 @@ For development environment cleanup (not for customers):
 ```
 
 **See [UNINSTALL-GUIDE.md](UNINSTALL-GUIDE.md) for developer cleanup guide**
-
-## 📚 Documentation
-
-| Document | Purpose | Audience |
-|----------|---------|----------|
-| [README.md](README.md) | Main documentation | Developers |
-| [PRODUCTION-GUIDE.md](PRODUCTION-GUIDE.md) | Deployment & distribution | Developers |
-| [DISTRIBUTION.md](DISTRIBUTION.md) | Packaging guide | Developers |
-| [CUSTOMER-UNINSTALL.md](CUSTOMER-UNINSTALL.md) | Uninstall instructions | End Users |
-| [UNINSTALL-GUIDE.md](UNINSTALL-GUIDE.md) | Dev environment cleanup | Developers |
 

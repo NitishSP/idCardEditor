@@ -14,8 +14,6 @@ const db = require('./Database');
 app.whenReady().then(() => {
   logger.info(`Application starting - Version ${config.appVersion} - Environment: ${config.nodeEnv}`);
 
-  // Initialize database tables
-  initializeDatabase();
 
   // Register all IPC handlers
   registerAllHandlers();
@@ -32,15 +30,7 @@ app.whenReady().then(() => {
 });
 
 
-function initializeDatabase() {
-  try {
-    // Database is already initialized in Database.js constructor
-    logger.info('Database initialized successfully');
-  } catch (error) {
-    logger.error('Database initialization error:', error);
-    app.quit();
-  }
-}
+
 
 /**
  * Quit when all windows are closed (except on macOS)
